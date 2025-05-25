@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getReadStoredList, getStoredList } from '../Utilities/addToLocalStorage';
 import ReadBooks from './ReadBooks';
+import { Helmet } from 'react-helmet-async';
 
 const ListedBooks = () => {
   const allBooks = useLoaderData();
@@ -39,6 +40,11 @@ const ListedBooks = () => {
  
   return (
     <div>
+      <Helmet>
+        <title>
+          Boi Poka | Listed Books
+        </title>
+      </Helmet>
       <div className="bg-base-300 px-10 py-4 rounded-lg my-5">
         <h3 className="text-center font-bold text-4xl">Books</h3>
       </div>

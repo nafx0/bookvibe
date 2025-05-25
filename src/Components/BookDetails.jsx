@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import {setReadStoredList, setStoredList} from '../Utilities/addToLocalStorage';
+import { Helmet } from 'react-helmet-async';
 
 const BookDetails = () => {
     const {bookId} = useParams();
@@ -24,6 +25,11 @@ const BookDetails = () => {
 
     return (
       <div className="bg-gray-100 min-h-screen py-10 px-4 md:px-10">
+        <Helmet>
+          <title>
+            {`Boi Poka | Book ${idx}`}
+          </title>
+        </Helmet>
         <div className="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-10">
           <div className="flex justify-center items-center">
             <img
